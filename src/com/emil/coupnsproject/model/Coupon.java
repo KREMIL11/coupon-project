@@ -1,34 +1,34 @@
 package com.emil.coupnsproject.model;
 
-import com.emil.coupnsproject.enums.CouponType;
+import com.emil.coupnsproject.enums.CouponCategory;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
 public class Coupon {
-    public Coupon(String title, String motherCompany, String startDate, String endDate, int amount, CouponType type, String message,
-                  float price, String image) {
+    public Coupon(String title, String motherCompany, String startDate, String endDate, int amount, CouponCategory type, String message,
+                  double price, String image) {
         this.title = title;
         this.motherCompany = motherCompany;
         this.startDate = startDate;
         this.endDate = endDate;
         this.amount = amount;
-        this.couponType = type;
+        this.couponCategory = type;
         this.message = message;
         this.price = price;
         this.image = image;
     }
 
-    public Coupon(long id, String title, String motherCompany, String startDate, String endDate, int amount, CouponType type, String message,
-                  float price, String image) {
+    public Coupon(Long id, String title, String motherCompany, String startDate, String endDate, int amount, CouponCategory type, String message,
+                  double price, String image) {
         this.id = id;
         this.title = title;
         this.motherCompany = motherCompany;
         this.startDate = startDate;
         this.endDate = endDate;
         this.amount = amount;
-        this.couponType = type;
+        this.couponCategory = type;
         this.message = message;
         this.price = price;
         this.image = image;
@@ -54,13 +54,13 @@ public class Coupon {
     private int amount;
     @Getter
     @Setter
-    private CouponType couponType;
+    private CouponCategory couponCategory;
     @Getter
     @Setter
     private String message;
     @Getter
     @Setter
-    private float price;
+    private double price;
     @Getter
     @Setter
     private String image;
@@ -73,7 +73,7 @@ public class Coupon {
                 ", startDate=" + startDate +
                 ", endDate=" + endDate
                 + ", amount=" + amount +
-                ", couponType=" + couponType +
+                ", couponType=" + couponCategory +
                 ", message=" + message +
                 ", price=" + price
                 + ", image=" + image +
