@@ -1,4 +1,4 @@
-package com.emil.coupnsproject.model;
+package com.emil.coupnsproject.beans;
 
 import com.emil.coupnsproject.enums.CouponCategory;
 import lombok.Getter;
@@ -7,10 +7,10 @@ import lombok.Setter;
 
 @NoArgsConstructor
 public class Coupon {
-    public Coupon(String title, String motherCompany, String startDate, String endDate, int amount, CouponCategory type, String message,
+    public Coupon(String title, String companyId, String startDate, String endDate, int amount, CouponCategory type, String message,
                   double price, String image) {
         this.title = title;
-        this.motherCompany = motherCompany;
+        this.companyId = companyId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.amount = amount;
@@ -20,11 +20,11 @@ public class Coupon {
         this.image = image;
     }
 
-    public Coupon(Long id, String title, String motherCompany, String startDate, String endDate, int amount, CouponCategory type, String message,
+    public Coupon(Long id, String title, String companyId, String startDate, String endDate, int amount, CouponCategory type, String message,
                   double price, String image) {
         this.id = id;
         this.title = title;
-        this.motherCompany = motherCompany;
+        this.companyId = companyId;
         this.startDate = startDate;
         this.endDate = endDate;
         this.amount = amount;
@@ -42,7 +42,7 @@ public class Coupon {
     private String title;
     @Getter
     @Setter
-    private String motherCompany;
+    private String companyId;
     @Getter
     @Setter
     private String startDate;
@@ -69,7 +69,7 @@ public class Coupon {
     public String toString() {
         return "Coupon [id=" + id +
                 ", title=" + title +
-                ", motherCompany=" + motherCompany +
+                ", motherCompany=" + companyId +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate
                 + ", amount=" + amount +

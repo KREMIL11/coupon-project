@@ -1,4 +1,4 @@
-package com.emil.coupnsproject.model;
+package com.emil.coupnsproject.beans;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,10 +29,10 @@ public class Company {
     private String companyName;
     @Getter
     @Setter
-    private int password;
+    private String email;
     @Getter
     @Setter
-    private String email;
+    private int password;
     @Getter
     private final ArrayList<Coupon> coupons = new ArrayList<Coupon>();
 

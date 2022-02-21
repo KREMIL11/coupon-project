@@ -1,40 +1,39 @@
-package com.emil.coupnsproject.dao;
+package com.emil.coupnsproject.db.dao;
 
-import com.emil.coupnsproject.db.ConnectionPool;
+import com.emil.coupnsproject.beans.Customer;
+import com.emil.coupnsproject.db.connection.ConnectionPool;
 import com.emil.coupnsproject.exception.EntityCrudExceptionCrud;
 import com.emil.coupnsproject.logging.Logger;
-import com.emil.coupnsproject.model.Company;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class CompanyDAO extends UserDAO<Long, Company> {
-    public static final CompanyDAO instance = new CompanyDAO();
+public class CustomerDAO extends UserDAO<Long, Customer> {
+    public static final CustomerDAO instance = new CustomerDAO();
 
     private final ConnectionPool connectionPool;
 
-    private static final Logger logger = Logger.getLogger(CompanyDAO.class);
+    private static final Logger logger = Logger.getLogger(CustomerDAO.class);
 
-    private CompanyDAO() {
+    private CustomerDAO() {
         try {
             connectionPool = ConnectionPool.getInstance();
         } catch (SQLException e) {
             throw new RuntimeException("Something went wrong while getting connection pool instance");
         }
     }
-
     @Override
-    public Long create(Company company) {
+    public Long create(Customer customer) {
         return null;
     }
 
     @Override
-    public Company read(Long aLong) {
+    public Customer read(Long aLong) {
         return null;
     }
 
     @Override
-    public List<Company> readAll() {
+    public List<Customer> readAll() {
         return null;
     }
 
@@ -49,7 +48,12 @@ public class CompanyDAO extends UserDAO<Long, Company> {
     }
 
     @Override
-    public Company readByEmail(String email) throws EntityCrudExceptionCrud {
+    public Customer readByEmail(final String email) throws EntityCrudExceptionCrud {
         return null;
+    }
+
+    @Override
+    public boolean isExists(final String email) throws EntityCrudExceptionCrud {
+        return readByEmail(email) != null;
     }
 }

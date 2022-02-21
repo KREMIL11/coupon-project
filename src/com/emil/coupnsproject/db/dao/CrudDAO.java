@@ -1,4 +1,4 @@
-package com.emil.coupnsproject.dao;
+package com.emil.coupnsproject.db.dao;
 
 import java.util.List;
 

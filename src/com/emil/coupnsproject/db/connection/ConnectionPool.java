@@ -1,5 +1,6 @@
-package com.emil.coupnsproject.db;
+package com.emil.coupnsproject.db.connection;
 
+import com.emil.coupnsproject.db.DbConfig;
 import com.emil.coupnsproject.logging.Logger;
 
 import java.sql.Connection;
@@ -64,7 +65,7 @@ public class ConnectionPool {
         }
     }
 
-    public void returnConnection(final Connection connection) {
+    public void restoreConnection(final Connection connection) {
         synchronized (connections) {
             if (connection == null) {
                 logger.warn("Attempt to return null connection terminated");
